@@ -62,4 +62,24 @@ describe('Sudoku Solver', function() {
     });
   });
 
+  describe('#checkRow()', function() {
+    it('should check that each value in the row does not equal the input', function() {
+      // No match, return true.
+      expect(solver.checkRow(parsedBoard, 0, 2)).to.be.ok;
+      // Match found, return false.
+      expect(solver.checkRow(parsedBoard, 0, 9)).to.not.be.ok;
+    });
+  });
+
+  describe('#check3x3Square()', function() {
+    it('should check that each value in a 3x3 square does not match the input', function() {
+      // No match, return true.
+      expect(solver.check3x3Square(parsedBoard, 2, 2, 1)).to.be.ok;
+      expect(solver.check3x3Square(parsedBoard, 7, 7, 9)).to.be.ok;
+      // Match found, return false.
+      expect(solver.check3x3Square(parsedBoard, 2, 2, 9)).to.not.be.ok;
+      expect(solver.check3x3Square(parsedBoard, 7, 7, 1)).to.not.be.ok;
+    });
+  });
+
 });

@@ -71,6 +71,15 @@ describe('Sudoku Solver', function() {
     });
   });
 
+  describe('#checkColumn()', function() {
+    it('should check that each value in a column does not equal the input', function() {
+      // No match, return true.
+      expect(solver.checkColumn(parsedBoard, 0, 9)).to.be.ok;
+      // Match found, return false.
+      expect(solver.checkColumn(parsedBoard, 0, 5)).to.not.be.ok;
+    });
+  });
+
   describe('#check3x3Square()', function() {
     it('should check that each value in a 3x3 square does not match the input', function() {
       // No match, return true.

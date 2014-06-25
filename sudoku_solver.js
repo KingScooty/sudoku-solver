@@ -42,6 +42,19 @@ module.exports.checkRow = function(board, row, value) {
   return true;
 };
 
+module.exports.checkColumn = function(board, column, value) {
+  // Iterate through every value in the column
+  for (var i = 0; i < board.length; i++) {
+    // If a match is found, return false
+    if (board[i][column] === value) {
+      return false;
+    }
+  }
+
+  // If no match was found, return true
+  return true;
+}
+
 module.exports.check3x3Square = function(board, column, row, value) {
   // Save the upper left corner
   var columnCorner = 0,

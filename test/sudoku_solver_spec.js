@@ -4,7 +4,7 @@ var chai = require('chai');
 var expect = chai.expect;
 var should = chai.should();
 
-var solver = require('../solver');
+var solver = require('../sudoku_solver');
 
 describe('Sudoku Solver', function() {
 
@@ -23,7 +23,7 @@ describe('Sudoku Solver', function() {
   describe('#parseBoard', function() {
     it('should parse a sudoku board into a 2D array', function() {
 
-      parseBoard = parseBoard(board);
+      parsedBoard = solver.parseBoard(board);
       var expectedBoard = [
         [0,9,0,0,0,0,0,0,6],
         [0,0,0,9,6,0,4,8,5],
@@ -36,9 +36,9 @@ describe('Sudoku Solver', function() {
         [3,0,0,0,9,0,0,0,0]       
       ];
 
-      expect(parseBoard.length).to.equal(9);
-      expect(parseBoard[0].length).to.equal(9);
-      expect(parseBoard).to.eql(expectedBoard);
+      expect(parsedBoard.length).to.equal(9);
+      expect(parsedBoard[0].length).to.equal(9);
+      expect(parsedBoard).to.eql(expectedBoard);
     });
   });
 

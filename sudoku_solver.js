@@ -134,3 +134,10 @@ module.exports.solvePuzzle = function(board, emptyPositions) {
   // return the solution
   return board;
 };
+
+module.exports.solveSudoku = function(board) {
+  var parsedBoard = this.parseBoard(board);
+  var emptyPositions = this.saveEmptyPositions(parsedBoard);
+
+  return this.solvePuzzle(parsedBoard, emptyPositions);
+}

@@ -18,7 +18,8 @@ describe('Sudoku Solver', function() {
               '706000810\n' +
               '300090000';
 
-  var parsedBoard;
+  var parsedBoard,
+      emptyPositions;
 
   describe('#parseBoard()', function() {
     it('should parse a sudoku board into a 2D array', function() {
@@ -112,7 +113,7 @@ describe('Sudoku Solver', function() {
                           [ 7,4,6,3,2,5,8,1,9 ],
                           [ 3,2,8,1,9,6,5,4,7 ]];
 
-  describe('#solvePuzzle', function() {
+  describe('#solvePuzzle()', function() {
     it('should find a solution to the puzzle passed in', function() {
       var solution = solver.solvePuzzle(parsedBoard, emptyPositions);
 

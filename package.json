@@ -9,8 +9,7 @@
     "mocha": "^1.20.1"
   },
   "scripts": {
-    "test": "mocha test/sudoku_solver_spec.js --reporter spec"
-    // "test": "./node_modules/mocha/bin/mocha"
+    "test": "mocha --reporter spec"
   },
   "engine": "node >= 0.4.1",
   "author": "Scotty Vernon",

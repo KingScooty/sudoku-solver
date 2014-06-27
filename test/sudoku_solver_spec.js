@@ -121,4 +121,12 @@ describe('Sudoku Solver', function() {
     });
   });
 
+  describe('#solveSudoku()', function() {
+    it('should find a solution to the puzzle string passed in', function() {
+      var solution = solver.solveSudoku(board);
+
+      expect(solution).to.eql(expectedSolution);
+    });
+  });
+
 });
